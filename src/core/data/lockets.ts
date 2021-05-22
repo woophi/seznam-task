@@ -3,7 +3,6 @@ import * as faker from 'faker';
 import { randomStringEnum } from './utils';
 
 const randomDisplay = (): MobileDisplay => faker.random.arrayElement(['6,5', '6,1', '6,7', '4,7']);
-const randomOs = (): MobileOS => faker.random.arrayElement(['ios', 'android']);
 const randomPhoneImg = () =>
   faker.random.arrayElement([
     'https://cdn.alza.cz/Foto/f11/SA/SAMO0213b2.jpg',
@@ -21,7 +20,7 @@ const makeRandomLocket = (): LocketItem => ({
   parameters: {
     display: randomDisplay(),
     processor: randomStringEnum(MobileProcessor),
-    os: randomOs()
+    os: randomStringEnum(MobileOS)
   }
 });
 

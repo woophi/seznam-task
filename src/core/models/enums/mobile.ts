@@ -4,3 +4,8 @@ export enum MobileProcessor {
   Exynos2100 = 'Exynos_2100',
   Apple13 = 'Apple_A13_Bionic'
 }
+
+export enum MobileOS {
+  IOS = 'ios',
+  Android = 'android'
+}
