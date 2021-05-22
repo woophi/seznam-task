@@ -1,4 +1,5 @@
 import { LocketItem } from 'core/models';
+import { Footer } from 'modules/footer';
 import { LocketsLayout } from 'modules/locket';
 import { LocketDetail } from 'modules/locket-detail';
 import { MainView, ViewContext } from 'modules/main-view';
@@ -21,14 +22,17 @@ export const App: FC = () => {
   const Content = viewElements[view];
 
   return (
-    <ViewContext.Provider
-      value={{
-        closeDetail,
-        openDetail,
-        selectedLocket
-      }}
-    >
-      <Content />
-    </ViewContext.Provider>
+    <>
+      <ViewContext.Provider
+        value={{
+          closeDetail,
+          openDetail,
+          selectedLocket
+        }}
+      >
+        <Content />
+      </ViewContext.Provider>
+      <Footer />
+    </>
   );
 };

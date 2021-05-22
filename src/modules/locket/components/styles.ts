@@ -18,5 +18,6 @@ export const locketsGrid: FelaRule = () => ({
   padding: '1rem',
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 1fr 1fr',
-  gap: '1rem 1rem'
+  gap: '1rem 1rem',
+  minHeight: 'calc(100vh - 64px)'
 });
