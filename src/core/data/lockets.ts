@@ -16,7 +16,7 @@ const makeRandomLocket = (): LocketItem => ({
   id: faker.datatype.number(),
   description: faker.lorem.sentence(50),
   imgUrl: randomPhoneImg(),
-  title: faker.lorem.slug(2),
+  title: faker.lorem.words(2),
   reviewsCount: faker.datatype.number(100),
   parameters: {
     display: randomDisplay(),

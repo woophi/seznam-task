@@ -6,3 +6,7 @@ export const randomStringEnum = <T>(anEnum: T): T[keyof T] => {
 };
 
 export const objKeys = <T extends object>(obj: T) => Object.keys(obj) as (keyof T)[];
+
+export const noop = () => {
+  // do nothing
+};

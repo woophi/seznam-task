@@ -1,1 +1,1 @@
-export * from './components/LocketLayout';
+export * from './components/LocketsLayout';
