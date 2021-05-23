@@ -41,7 +41,7 @@ export const LocketDetail: FC = () => {
             tabId: LocketDetailTabs.Shops
           },
           {
-            title: 'Reviews',
+            title: `Reviews (${selectedLocket?.reviewsCount})`,
             content: selectedLocket?.reviews
               .sort((a, b) => b.created.getTime() - a.created.getTime())
               .map(review => <ReviewRow key={review.id} info={review} />),

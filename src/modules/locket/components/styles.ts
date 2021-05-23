@@ -37,14 +37,15 @@ export const locketDescription: FelaRule = () => ({
   height: '170px',
   position: 'relative',
   overflow: 'hidden',
+  lineHeight: '1.5rem',
   '&:after': {
     content: '""',
     textAlign: 'right',
     position: 'absolute',
     bottom: 0,
     right: 0,
-    width: '70%',
-    height: '1.2em',
+    width: '65%',
+    height: '1.5rem',
     background: 'linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%)'
   }
 });
