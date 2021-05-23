@@ -5,11 +5,11 @@ import { tabStyle } from './styles';
 type Props<T> = {
   onClick: () => void;
   tab: TabModel<T>;
-  activeTabValue: T;
+  activeTabId: T;
 };
 
-export function TabHeader<T>({ onClick, tab, activeTabValue }: Props<T>) {
-  const { css } = useFela({ active: activeTabValue === tab.value });
+export function TabHeader<T>({ onClick, tab, activeTabId }: Props<T>) {
+  const { css } = useFela({ active: activeTabId === tab.tabId });
   return (
     <div onClick={onClick} className={css(tabStyle)}>
       {tab.title}

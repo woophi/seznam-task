@@ -9,13 +9,13 @@ type Props<T> = {
 };
 
 export function Tabs<T extends string>({ tabs }: Props<T>) {
-  const [{ content, value }, setActive] = useState<TabModel<T>>(tabs[0]);
+  const [{ content, tabId }, setActive] = useState<TabModel<T>>(tabs[0]);
   const { css } = useFela();
   return (
     <div className={css(tabsContainer)}>
       <div className={css(headerContainer)}>
         {tabs.map(tab => (
-          <TabHeader key={tab.value} activeTabValue={value} tab={tab} onClick={() => setActive(tab)} />
+          <TabHeader key={tab.tabId} activeTabId={tabId} tab={tab} onClick={() => setActive(tab)} />
         ))}
       </div>
       <div className={css(tabsContent)}>{content}</div>

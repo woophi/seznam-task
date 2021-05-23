@@ -43,7 +43,7 @@ export const LocketDetail: FC = () => {
                 ))}
               </>
             ),
-            value: LocketDetailTabs.Shops
+            tabId: LocketDetailTabs.Shops
           },
           {
             title: 'Reviews',
@@ -66,7 +66,7 @@ export const LocketDetail: FC = () => {
                 ))}
               </>
             ),
-            value: LocketDetailTabs.Reviews
+            tabId: LocketDetailTabs.Reviews
           }
         ]}
       />
