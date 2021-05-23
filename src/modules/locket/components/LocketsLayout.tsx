@@ -5,6 +5,7 @@ import { Filters } from 'modules/search/components/Filters';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { useFela } from 'react-fela';
 import { Locket } from './Locket';
+import { NoResults } from './NoResults';
 import { locketsGrid } from './styles';
 
 const initialData = getLockets();
@@ -61,11 +62,17 @@ export const LocketsLayout: FC = () => {
       <Search onChange={searchLockets}>
         <Filters changeOS={changeOS} changeProcessor={changeProcessor} model={filters} />
       </Search>
-      <div className={css(locketsGrid)}>
-        {data.map(item => (
-          <Locket key={item.id} item={item} />
-        ))}
-      </div>
+      {data.length ? (
+        <div className={css({ minHeight: 'calc(100vh - 64px)' })}>
+          <div className={css(locketsGrid)}>
+            {data.map(item => (
+              <Locket key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <NoResults />
+      )}
     </>
   );
 };

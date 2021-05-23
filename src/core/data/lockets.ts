@@ -62,5 +62,5 @@ export const getLocketDetail = (item: LocketItem): LocketDetail => ({
   reviews: new Array(faker.datatype.number({ min: item.reviewsCount, max: item.reviewsCount }))
     .fill(0)
     .map(makeRandomReview),
-  description: faker.lorem.sentence(70)
+  description: `${item.description} ${faker.lorem.sentence(70)}`
 });

@@ -21,8 +21,6 @@ export const locketsGrid: FelaRule = () => ({
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 1fr 1fr',
   gap: '1rem 1rem',
-  minHeight: 'calc(100vh - 64px)',
-
   '@media (min-width: 1001px) and (max-width: 1400px)': {
     gridTemplateColumns: '1fr 1fr 1fr'
   },
