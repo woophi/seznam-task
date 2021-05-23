@@ -1,6 +1,6 @@
 import { objKeys } from 'core/data/utils';
 import { LocketDetailParameters, LocketParameters as LocketParametersType } from 'core/models';
-import { firstUppercase } from 'core/shared/styles';
+import { firstLetterUp } from 'core/shared/styles';
 import { memo } from 'react';
 import { useFela } from 'react-fela';
 
@@ -29,7 +29,7 @@ export const LocketParameters = memo<Props>(({ parameters }) => {
     <div className={css({ marginTop: '1rem' })}>
       {objKeys(parameters).map(key => (
         <div key={key}>
-          <b className={css(firstUppercase)}>{key}: </b>
+          <b className={css(firstLetterUp)}>{key}: </b>
           {parameters[key]}
           {parameterPostfix(key)}
         </div>

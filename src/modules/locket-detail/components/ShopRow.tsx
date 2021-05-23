@@ -1,7 +1,7 @@
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShopInfo } from 'core/models';
-import { actionIcon, firstUppercase } from 'core/shared/styles';
+import { actionIcon, firstLetterUp } from 'core/shared/styles';
 import { FC } from 'react';
 import { useFela } from 'react-fela';
 type Props = {
@@ -24,7 +24,7 @@ export const ShopRow: FC<Props> = ({ info: { name, price, link } }) => {
         border: '1px solid whitesmoke'
       })}
     >
-      <div className={css(firstUppercase, { marginRight: '.5rem' })}>
+      <div className={css(firstLetterUp, { marginRight: '.5rem' })}>
         <b>{name}</b> - {price}$
       </div>
       <FontAwesomeIcon icon={faExternalLinkAlt} />

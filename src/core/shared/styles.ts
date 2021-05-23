@@ -9,4 +9,4 @@ export const actionIcon: FelaRule = () => ({
   }
 });
 
-export const firstUppercase: FelaRule = () => ({ textTransform: 'capitalize' });
+export const firstLetterUp: FelaRule = () => ({ textTransform: 'capitalize' });

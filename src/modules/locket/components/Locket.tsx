@@ -2,7 +2,7 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getLocketDetail } from 'core/data/lockets';
 import { LocketItem } from 'core/models';
-import { firstUppercase } from 'core/shared/styles';
+import { firstLetterUp } from 'core/shared/styles';
 import { LocketParameters } from 'modules/locket-detail/components/LocketParameters';
 import { ViewContext } from 'modules/main-view';
 import { memo, useContext } from 'react';
@@ -21,7 +21,7 @@ export const Locket = memo<Props>(({ item }) => {
   const selectLocket = () => openDetail(getLocketDetail(item));
   return (
     <div className={css(locketContainer)} onClick={selectLocket}>
-      <div className={css(firstUppercase, { textAlign: 'center', fontSize: '1.5rem', fontWeight: 500 })}>{title}</div>
+      <div className={css(firstLetterUp, { textAlign: 'center', fontSize: '1.5rem', fontWeight: 500 })}>{title}</div>
       <div className={css({ display: 'flex', minWidth: '100px' })}>
         <div
           className={css({
