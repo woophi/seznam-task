@@ -1,8 +1,9 @@
 import { faAngry, faMeh, faSmileBeam, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { LocketDetailParameters } from 'core/models';
+import { LocketDetailParameters, LocketDetailTabs } from 'core/models';
 import { actionIcon, firstUppercase } from 'core/shared/styles';
 import { ViewContext } from 'modules/main-view';
+import { Tabs } from 'modules/tabs';
 import { FC, useContext, useEffect } from 'react';
 import { useFela } from 'react-fela';
 import { LocketParameters } from './LocketParameters';
@@ -28,33 +29,47 @@ export const LocketDetail: FC = () => {
       </div>
 
       <p>{selectedLocket?.description}</p>
-      <div>
-        <h2>Available in shops</h2>
-        {selectedLocket?.shops.map(shop => (
-          <a key={shop.id} href={shop.link} target="__blank">
-            <caption>{shop.name}</caption>
-            <span>{shop.price}$</span>
-          </a>
-        ))}
-      </div>
-      <div>
-        <h3>Reviews</h3>
-        {selectedLocket?.reviews.map(review => (
-          <div>
-            <h4>
-              {review.name}{' '}
-              {review.positive ? (
-                <FontAwesomeIcon icon={faSmileBeam} />
-              ) : review.positive !== null ? (
-                <FontAwesomeIcon icon={faAngry} />
-              ) : (
-                <FontAwesomeIcon icon={faMeh} />
-              )}
-            </h4>
-            <p>{review.feedback}</p>
-          </div>
-        ))}
-      </div>
+      <Tabs<LocketDetailTabs>
+        tabs={[
+          {
+            title: 'Available in shops',
+            content: (
+              <>
+                {selectedLocket?.shops.map(shop => (
+                  <a key={shop.id} href={shop.link} target="__blank">
+                    <caption>{shop.name}</caption>
+                    <span>{shop.price}$</span>
+                  </a>
+                ))}
+              </>
+            ),
+            value: LocketDetailTabs.Shops
+          },
+          {
+            title: 'Reviews',
+            content: (
+              <>
+                {selectedLocket?.reviews.map(review => (
+                  <div>
+                    <h4>
+                      {review.name}{' '}
+                      {review.positive ? (
+                        <FontAwesomeIcon icon={faSmileBeam} />
+                      ) : review.positive !== null ? (
+                        <FontAwesomeIcon icon={faAngry} />
+                      ) : (
+                        <FontAwesomeIcon icon={faMeh} />
+                      )}
+                    </h4>
+                    <p>{review.feedback}</p>
+                  </div>
+                ))}
+              </>
+            ),
+            value: LocketDetailTabs.Reviews
+          }
+        ]}
+      />
     </div>
   );
 };
