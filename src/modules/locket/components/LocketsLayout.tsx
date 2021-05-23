@@ -35,11 +35,7 @@ export const LocketsLayout: FC = () => {
   const searchLockets = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
     setFilters(initialFilters);
-    if (!query) {
-      setData(initialData);
-    } else {
-      setData(d => d.filter(locket => !!~locket.title.toLowerCase().indexOf(query)));
-    }
+    setData(initialData.filter(locket => !!~locket.title.toLowerCase().indexOf(query)));
   }, []);
 
   const changeOS = useCallback((filterValue: MobileOS) => {
