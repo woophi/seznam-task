@@ -1,7 +1,7 @@
 import { FelaRule } from 'react-fela';
 
 export const searchContainer: FelaRule<{ open: boolean }> = ({ open }) => ({
-  margin: '1rem',
+  margin: '1rem 1rem 0',
   borderRadius: '.25rem',
   boxShadow: '0 1px 2px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 6%)',
   display: 'flex',
