@@ -1,16 +1,18 @@
 import { faAngry, faMeh, faSmileBeam, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { objKeys, parameterPostfix } from 'core/data/utils';
 import { LocketDetailParameters } from 'core/models';
 import { actionIcon, firstUppercase } from 'core/shared/styles';
 import { ViewContext } from 'modules/main-view';
-import { FC, useContext } from 'react';
+import { FC, useContext, useEffect } from 'react';
 import { useFela } from 'react-fela';
+import { LocketParameters } from './LocketParameters';
 import { detailContainer, detailImg, detailTitle } from './styles';
 
 export const LocketDetail: FC = () => {
   const { selectedLocket, closeDetail } = useContext(ViewContext);
   const { css } = useFela();
+
+  useEffect(() => window.scrollTo({ top: 0, behavior: 'smooth' }), []);
 
   const parameters = selectedLocket?.parameters ?? ({} as LocketDetailParameters);
 
@@ -22,15 +24,7 @@ export const LocketDetail: FC = () => {
       </div>
       <div className={css({ display: 'flex', flexWrap: 'wrap' })}>
         <img src={selectedLocket?.imgUrl} alt={selectedLocket?.title} className={css(detailImg)} />
-        <div className={css({ marginTop: '1rem' })}>
-          {objKeys(parameters).map(key => (
-            <div key={key}>
-              <b className={css(firstUppercase)}>{key}: </b>
-              {parameters[key]}
-              {parameterPostfix(key)}
-            </div>
-          ))}
-        </div>
+        <LocketParameters parameters={parameters} />
       </div>
 
       <p>{selectedLocket?.description}</p>

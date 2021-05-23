@@ -1,12 +1,13 @@
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getLocketDetail } from 'core/data/lockets';
-import { objKeys } from 'core/data/utils';
 import { LocketItem } from 'core/models';
+import { firstUppercase } from 'core/shared/styles';
+import { LocketParameters } from 'modules/locket-detail/components/LocketParameters';
 import { ViewContext } from 'modules/main-view';
 import { memo, useContext } from 'react';
 import { useFela } from 'react-fela';
-import { locketContainer } from './styles';
+import { locketContainer, locketDescription } from './styles';
 
 type Props = {
   item: LocketItem;
@@ -20,26 +21,23 @@ export const Locket = memo<Props>(({ item }) => {
   const selectLocket = () => openDetail(getLocketDetail(item));
   return (
     <div className={css(locketContainer)} onClick={selectLocket}>
+      <div className={css(firstUppercase, { textAlign: 'center', fontSize: '1.5rem', fontWeight: 500 })}>{title}</div>
       <div className={css({ display: 'flex', minWidth: '100px' })}>
         <div
           className={css({
-            marginRight: '.75rem',
-            minWidth: '100px'
+            margin: '1rem 1rem 0 0',
+            minWidth: '100px',
+            width: '40%'
           })}
         >
-          <div>{title}</div>
           <img src={imgUrl} className={css({ maxWidth: '100%' })} alt={title} />
         </div>
-        <div>
-          <p>{description}</p>
-        </div>
+        <p className={css(locketDescription)}>{description}</p>
       </div>
-      <div>
-        {objKeys(parameters).map(key => (
-          <div key={key}>{`${key}: ${parameters[key]}`}</div>
-        ))}
+      <div className={css({ marginTop: 'auto' })}>
+        <LocketParameters parameters={parameters} />
         <div>
-          <FontAwesomeIcon icon={faUsers} /> {reviewsCount}
+          <FontAwesomeIcon icon={faCommentDots} /> {reviewsCount}
         </div>
       </div>
     </div>

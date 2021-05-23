@@ -7,6 +7,8 @@ export const locketContainer: FelaRule = () => ({
   padding: '1rem',
   cursor: 'pointer',
   transition: 'ease-in-out .2s transform',
+  display: 'flex',
+  flexDirection: 'column',
   '&:hover': {
     transform: 'scale(1.02)'
   },
@@ -29,5 +31,22 @@ export const locketsGrid: FelaRule = () => ({
   },
   '@media (max-width: 600px)': {
     gridTemplateColumns: '1fr'
+  }
+});
+
+export const locketDescription: FelaRule = () => ({
+  width: '60%',
+  height: '170px',
+  position: 'relative',
+  overflow: 'hidden',
+  '&:after': {
+    content: '""',
+    textAlign: 'right',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    width: '70%',
+    height: '1.2em',
+    background: 'linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%)'
   }
 });

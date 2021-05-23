@@ -58,7 +58,9 @@ export const getLocketDetail = (item: LocketItem): LocketDetail => ({
     internalMemory: randomInternalMem(),
     ram: randomRam()
   },
-  shops: new Array(faker.datatype.number({ min: 3, max: 5 })).fill(0).map(makeRandomShop),
-  reviews: new Array(faker.datatype.number(item.reviewsCount)).fill(0).map(makeRandomReview),
+  shops: new Array(faker.datatype.number({ min: 3, max: 8 })).fill(0).map(makeRandomShop),
+  reviews: new Array(faker.datatype.number({ min: item.reviewsCount, max: item.reviewsCount }))
+    .fill(0)
+    .map(makeRandomReview),
   description: faker.lorem.sentence(70)
 });
