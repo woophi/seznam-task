@@ -19,21 +19,25 @@ export type LocketParameters = {
   display: MobileDisplay;
 };
 
+export type LocketDetailParameters = {
+  ram: MobileRam;
+  internalMemory: MobileInternalMemory;
+} & LocketParameters;
+
 export type LocketDetail = {
-  parameters: {
-    ram: MobileRam;
-    internalMemory: MobileInternalMemory;
-  } & LocketParameters;
+  parameters: LocketDetailParameters;
   shops: ShopInfo[];
   reviews: ReviewInfo[];
 } & Omit<LocketItem, 'parameters'>;
 
 export type ShopInfo = {
+  id: number;
   name: string;
   price: string;
   link: string;
 };
 export type ReviewInfo = {
+  id: number;
   name: string;
   feedback: string;
   positive: boolean | null;

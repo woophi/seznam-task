@@ -1,5 +1,5 @@
 import { noop } from 'core/data/utils';
-import { LocketItem } from 'core/models';
+import { LocketDetail } from 'core/models';
 import { createContext } from 'react';
 
 export enum MainView {
@@ -8,9 +8,9 @@ export enum MainView {
 }
 
 export type ViewProps = {
-  openDetail: (locket: LocketItem) => void;
+  openDetail: (locket: LocketDetail) => void;
   closeDetail: () => void;
-  selectedLocket: LocketItem | null;
+  selectedLocket: LocketDetail | null;
 };
 
 const defaultView: ViewProps = {

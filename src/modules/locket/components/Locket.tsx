@@ -1,11 +1,12 @@
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getLocketDetail } from 'core/data/lockets';
 import { objKeys } from 'core/data/utils';
 import { LocketItem } from 'core/models';
+import { ViewContext } from 'modules/main-view';
 import { memo, useContext } from 'react';
 import { useFela } from 'react-fela';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { locketContainer } from './styles';
-import { ViewContext } from 'modules/main-view';
 
 type Props = {
   item: LocketItem;
@@ -16,7 +17,7 @@ export const Locket = memo<Props>(({ item }) => {
   const { css } = useFela();
   const { openDetail } = useContext(ViewContext);
 
-  const selectLocket = () => openDetail(item);
+  const selectLocket = () => openDetail(getLocketDetail(item));
   return (
     <div className={css(locketContainer)} onClick={selectLocket}>
       <div className={css({ display: 'flex', minWidth: '100px' })}>
@@ -30,7 +31,7 @@ export const Locket = memo<Props>(({ item }) => {
           <img src={imgUrl} className={css({ maxWidth: '100%' })} alt={title} />
         </div>
         <div>
-          <div>{description}</div>
+          <p>{description}</p>
         </div>
       </div>
       <div>

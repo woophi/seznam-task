@@ -1,4 +1,4 @@
-import { LocketItem } from 'core/models';
+import { LocketDetail as LocketDetailModel } from 'core/models';
 import { Footer } from 'modules/footer';
 import { LocketsLayout } from 'modules/locket';
 import { LocketDetail } from 'modules/locket-detail';
@@ -11,12 +11,15 @@ const viewElements = {
 };
 
 export const App: FC = () => {
-  const [{ view, selectedLocket }, setState] = useState<{ selectedLocket: LocketItem | null; view: MainView }>({
+  const [{ view, selectedLocket }, setState] = useState<{ selectedLocket: LocketDetailModel | null; view: MainView }>({
     selectedLocket: null,
     view: MainView.Lockets
   });
 
-  const openDetail = useCallback((locket: LocketItem) => setState({ selectedLocket: locket, view: MainView.Detail }), []);
+  const openDetail = useCallback(
+    (locket: LocketDetailModel) => setState({ selectedLocket: locket, view: MainView.Detail }),
+    []
+  );
   const closeDetail = useCallback(() => setState({ selectedLocket: null, view: MainView.Lockets }), []);
 
   const Content = viewElements[view];

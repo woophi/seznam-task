@@ -19,11 +19,3 @@ export const searchInput: FelaRule = () => ({
   fontSize: '21px',
   padding: 0
 });
-export const filterIcon: FelaRule = () => ({
-  padding: '1rem',
-  cursor: 'pointer',
-  borderRadius: '.25rem',
-  '&:hover': {
-    backgroundColor: 'whitesmoke'
-  }
-});
