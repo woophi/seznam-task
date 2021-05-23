@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="f_a f_b f_c f_d"
+>
+  © Copyright 
+  2021
+</footer>
+`;

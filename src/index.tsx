@@ -1,19 +1,16 @@
-import { configureFela } from 'core/fela';
+import { FelaProvider } from 'core/fela/Provider';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { RendererProvider as Fela } from 'react-fela';
 import { App } from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const felaRenderer = configureFela();
-
 ReactDOM.render(
-  <Fela renderer={felaRenderer}>
+  <FelaProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Fela>,
+  </FelaProvider>,
   document.getElementById('root')
 );
 
