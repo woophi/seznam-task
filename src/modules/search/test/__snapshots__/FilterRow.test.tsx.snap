@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterRow renders correctly 1`] = `
+<div
+  className="f_a f_b f_c f_d"
+>
+  <b
+    className="f_e"
+  >
+    Test filter
+  </b>
+  <span
+    className="f_e"
+    onClick={[Function]}
+  >
+    <span
+      className="f_f"
+      onClick={[Function]}
+    >
+      <input
+        checked={false}
+        className="inp-cbx"
+        id="test value 1"
+        onChange={[Function]}
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+        type="checkbox"
+      />
+      <label
+        className="cbx"
+        htmlFor="test value 1"
+      >
+        <span>
+          <svg
+            height="12px"
+            viewBox="0 0 12 12"
+            width="12px"
+          >
+            <polyline
+              points="1 5 4 8 11 1"
+            />
+          </svg>
+        </span>
+      </label>
+    </span>
+    test option 1
+  </span>
+  <span
+    className="f_e"
+    onClick={[Function]}
+  >
+    <span
+      className="f_f"
+      onClick={[Function]}
+    >
+      <input
+        checked={true}
+        className="inp-cbx"
+        id="test value 2"
+        onChange={[Function]}
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+        type="checkbox"
+      />
+      <label
+        className="cbx"
+        htmlFor="test value 2"
+      >
+        <span>
+          <svg
+            height="12px"
+            viewBox="0 0 12 12"
+            width="12px"
+          >
+            <polyline
+              points="1 5 4 8 11 1"
+            />
+          </svg>
+        </span>
+      </label>
+    </span>
+    test option 2
+  </span>
+</div>
+`;
