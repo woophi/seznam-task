@@ -41,4 +41,5 @@ export type ReviewInfo = {
   name: string;
   feedback: string;
   positive: boolean | null;
+  created: Date;
 };

@@ -7,6 +7,7 @@ import { Tabs } from 'modules/tabs';
 import { FC, useContext, useEffect } from 'react';
 import { useFela } from 'react-fela';
 import { LocketParameters } from './LocketParameters';
+import { ShopRow } from './ShopRow';
 import { detailContainer, detailImg, detailTitle } from './styles';
 
 export const LocketDetail: FC = () => {
@@ -33,16 +34,9 @@ export const LocketDetail: FC = () => {
         tabs={[
           {
             title: 'Available in shops',
-            content: (
-              <>
-                {selectedLocket?.shops.map(shop => (
-                  <a key={shop.id} href={shop.link} target="__blank">
-                    <caption>{shop.name}</caption>
-                    <span>{shop.price}$</span>
-                  </a>
-                ))}
-              </>
-            ),
+            content: selectedLocket?.shops
+              .sort((a, b) => Number(a.price) - Number(b.price))
+              .map(shop => <ShopRow key={shop.id} info={shop} />),
             tabId: LocketDetailTabs.Shops
           },
           {
@@ -50,8 +44,9 @@ export const LocketDetail: FC = () => {
             content: (
               <>
                 {selectedLocket?.reviews.map(review => (
-                  <div>
+                  <div key={review.id}>
                     <h4>
+                      {review.created.toUTCString()}
                       {review.name}{' '}
                       {review.positive ? (
                         <FontAwesomeIcon icon={faSmileBeam} />

@@ -46,7 +46,8 @@ const makeRandomReview = (): ReviewInfo => ({
   id: faker.datatype.number(),
   feedback: faker.lorem.words(15),
   name: faker.name.firstName(),
-  positive: faker.random.arrayElement([false, true, null])
+  positive: faker.random.arrayElement([false, true, null]),
+  created: faker.date.past()
 });
 
 export const getLockets = () => new Array(faker.datatype.number({ min: 10, max: 25 })).fill(0).map(makeRandomLocket);
