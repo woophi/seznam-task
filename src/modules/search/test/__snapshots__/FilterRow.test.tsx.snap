@@ -11,6 +11,7 @@ exports[`FilterRow renders correctly 1`] = `
   </b>
   <span
     className="f_e"
+    data-testid="test_value_1"
     onClick={[Function]}
   >
     <span
@@ -20,7 +21,7 @@ exports[`FilterRow renders correctly 1`] = `
       <input
         checked={false}
         className="inp-cbx"
-        id="test value 1"
+        id="test_value_1"
         onChange={[Function]}
         style={
           Object {
@@ -31,7 +32,7 @@ exports[`FilterRow renders correctly 1`] = `
       />
       <label
         className="cbx"
-        htmlFor="test value 1"
+        htmlFor="test_value_1"
       >
         <span>
           <svg
@@ -50,6 +51,7 @@ exports[`FilterRow renders correctly 1`] = `
   </span>
   <span
     className="f_e"
+    data-testid="test_value_2"
     onClick={[Function]}
   >
     <span
@@ -59,7 +61,7 @@ exports[`FilterRow renders correctly 1`] = `
       <input
         checked={true}
         className="inp-cbx"
-        id="test value 2"
+        id="test_value_2"
         onChange={[Function]}
         style={
           Object {
@@ -70,7 +72,7 @@ exports[`FilterRow renders correctly 1`] = `
       />
       <label
         className="cbx"
-        htmlFor="test value 2"
+        htmlFor="test_value_2"
       >
         <span>
           <svg
