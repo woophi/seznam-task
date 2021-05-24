@@ -4,7 +4,7 @@ import { getLocketDetail } from 'core/data/lockets';
 import { LocketItem } from 'core/models';
 import { firstLetterUp } from 'core/shared/styles';
 import { LocketParameters } from 'modules/locket-detail/components/LocketParameters';
-import { ViewContext } from 'modules/main-view';
+import { LocketDetailContext } from 'modules/locket-detail/context';
 import { memo, useContext } from 'react';
 import { useFela } from 'react-fela';
 import { locketContainer, locketDescription } from './styles';
@@ -16,7 +16,7 @@ type Props = {
 export const Locket = memo<Props>(({ item }) => {
   const { imgUrl, title, description, parameters, reviewsCount } = item;
   const { css } = useFela();
-  const { openDetail } = useContext(ViewContext);
+  const { openDetail } = useContext(LocketDetailContext);
 
   const selectLocket = () => openDetail(getLocketDetail(item));
   return (

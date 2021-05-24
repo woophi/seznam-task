@@ -2,17 +2,17 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LocketDetailParameters, LocketDetailTabs } from 'core/models';
 import { actionIcon, firstLetterUp } from 'core/shared/styles';
-import { ViewContext } from 'modules/main-view';
 import { Tabs } from 'modules/tabs';
 import { FC, useContext, useEffect } from 'react';
 import { useFela } from 'react-fela';
+import { LocketDetailContext } from '../context';
 import { LocketParameters } from './LocketParameters';
 import { ReviewRow } from './ReviewRow';
 import { ShopRow } from './ShopRow';
 import { detailContainer, detailImg, detailTitle } from './styles';
 
 export const LocketDetail: FC = () => {
-  const { selectedLocket, closeDetail } = useContext(ViewContext);
+  const { selectedLocket, closeDetail } = useContext(LocketDetailContext);
   const { css } = useFela();
 
   useEffect(() => window.scrollTo({ top: 0, behavior: 'smooth' }), []);
